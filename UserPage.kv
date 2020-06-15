@@ -1,0 +1,41 @@
+<UserPage>:
+    label_wid: my_custom_label
+    name: "screen2"
+    GridLayout:
+        size_hint: (0.5, 1)
+        pos_hint: {"center_x": 0.5, "center_y": 0.6}
+        rows: 5
+        padding: 20
+
+
+        Label:
+            id: my_custom_label
+            size_hint: (0.2, 0.2)
+            text: "Welcome"
+            font_size: 30
+            halign: "center"
+            valign: "middle"
+
+        Button:
+            id: b2
+            text: "Sign in to Soundcloud"
+            size_hint: (0.2, 0.06)
+            on_press:
+                root.sign_in_soundcloud()
+
+        Label:
+            id: my_custom_label
+            size_hint: (0.2, 0.06)
+            text: ""
+
+        Button:
+            text: 'Check My Score'
+            size_hint: (0.2, 0.06)
+            on_press: root.score_check()
+
+        Button:
+            id: b1
+            text: "Logout"
+            size_hint: (0.2, 0.06)
+            on_press:
+                root.go_back()

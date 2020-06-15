@@ -1,0 +1,72 @@
+<LoginPage>:
+    name: "Login"
+    GridLayout:
+        size_hint: (0.5, 0.5)
+        pos_hint: {"center_x": 0.5, "center_y": 0.6}
+        rows: 5
+        padding: 20
+
+        Label:
+            size_hint: (0.2, 0.2)
+            text:"Login to Get Started!"
+            font_size: 30
+            halign: "center"
+            valign: "middle"
+            
+        TextInput:
+            id: login
+            hint_text: "id"
+            size_hint: (0.2, 0.06)
+            font_size: 20
+            multiline: False
+
+        TextInput:
+            id: passw
+            hint_text: "password"
+            size_hint: (0.2, 0.06)
+            cursor_blink: True
+            font_size: 20
+            multiline: False
+            password: True
+
+        Button:
+            text: "Login"
+            size_hint: (0.2, 0.08)
+            on_release: 
+                root.verify_credentials()
+                
+                
+        Button:
+            text: "Sign up"
+            size_hint: (0.2, 0.08)
+            on_release:
+                root.goto_signup()
+
+
+<SC_LoginPage>:
+    name: "Login"
+    GridLayout:
+        size_hint: (0.5, 0.5)
+        pos_hint: {"center_x": 0.5, "center_y": 0.6}
+        rows: 5
+        padding: 20
+
+        Label:
+            size_hint: (0.2, 0.2)
+            text:"Put your username to get started"
+            font_size: 30
+            halign: "center"
+            valign: "middle"
+
+        TextInput:
+            id: login
+            hint_text: "id"
+            size_hint: (0.2, 0.06)
+            font_size: 20
+            multiline: False
+
+        Button:
+            text: "Identify"
+            size_hint: (0.2, 0.08)
+            on_release:
+                root.verify_credentials_SC()
